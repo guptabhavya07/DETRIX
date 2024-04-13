@@ -1,0 +1,13 @@
+const db = require("mongoose");
+db.connect(
+  "mongodb+srv://anniagg2003:annanay@cluster0.81ccs6o.mongodb.net/"
+);
+
+db.connection.on("connected", () => {
+  console.log("Mongo DB Connected");
+});
+
+db.connection.on("error", (err) => {
+  console.log("Mongo DB connection failed with error", err);
+});
+module.exports = db;
